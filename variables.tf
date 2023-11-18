@@ -11,3 +11,7 @@ variable "instance_types" {
   type    = list(string)
   default = ["t2.micro", "t2.small", "t2.medium"]
 }
+variable "aws_key_pair" {
+  type    = string
+  default = "your_key_pair_name"
+}

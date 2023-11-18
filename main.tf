@@ -19,7 +19,7 @@ provider "aws" {
 }
 
 resource "aws_key_pair" "cloud_2023" {
-  key_name   = var.key_name
+  key_name   = var.aws_key_pair
   public_key = file("~/.ssh/id_ed25519.pub")
 }
 
@@ -55,7 +55,7 @@ resource "aws_instance" "cloud_2023" {
 
   ami           = var.ami
   instance_type = var.instance_types
-  key_name      = var.key_name
+  key_name      = var.aws_key_pair
   subnet_id              = aws_subnet.main.id
   vpc_security_group_ids = [module.security_groups.security_group_id["web_sg"]]
   }
