@@ -77,3 +77,4 @@ resource "aws_subnet" "main" {
     Name = "cloud_2023"
   }
 }
+
